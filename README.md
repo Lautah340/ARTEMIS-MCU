@@ -14,6 +14,22 @@ elegir la opcion 8 y confirmar. El reporte no existe hasta que se exporta.
 
 **Estado de verificacion:** compilacion C11 con Wall, Wextra, Wpedantic y Werror mediante Clang de Zig 0.13.0, sin advertencias. El 9 de noviembre de 2026 se ejecutaron correctamente las pruebas del caso nominal, entradas invalidas, lineas largas, NUL, NaN/inf, desbordamientos, coma decimal, fin de entrada, pulso nulo, historial y exportacion de reportes. Un bloqueo inicial de Windows impidio las primeras pruebas; posteriormente el programa pudo ejecutarse. Los scripts no modifican las protecciones de Windows. No requiere ejecutarse como administrador.
 
+### Si Windows bloquea el programa (Device Guard)
+
+Al abrir `ejecutar.bat`, Windows puede mostrar un mensaje como **“artemis.exe ha sido bloqueado por la directiva de Device Guard de su organización”**. Ese mensaje también puede aparecer en una computadora personal: indica que una política de control de aplicaciones impidió iniciar el ejecutable. El programa incluido no tiene firma digital.
+
+**Si el bloqueo proviene de Control inteligente de aplicaciones (Smart App Control)** y está usando su propia computadora, puede revisar esta opción:
+
+1. Abra **Inicio → Seguridad de Windows**.
+2. Entre en **Control de aplicaciones y navegador**.
+3. Abra **Configuración de Control inteligente de aplicaciones**.
+4. Si figura **Activado** y decide desactivar esa protección, seleccione **Desactivado**.
+5. Vuelva a abrir `ejecutar.bat`.
+
+**Este cambio afecta a todas las aplicaciones, no solamente a Artemis.** Control inteligente de aplicaciones es una protección adicional y no reemplaza al antivirus; Microsoft Defender puede seguir activo. Microsoft indica que esta función no ofrece una excepción para permitir una sola aplicación. La posibilidad de volver a activarla depende de la versión y las actualizaciones de Windows: lea el aviso que muestre su equipo antes de confirmar. Consulte la [documentación oficial de Microsoft](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions).
+
+**Si ya figura Desactivado y el bloqueo continúa**, estos pasos no resuelven necesariamente el problema: puede haber otra política activa o un cambio aún no aplicado. Guarde su trabajo, reinicie el equipo y pruebe nuevamente. Si persiste, revise el evento del bloqueo en **Visor de eventos → Registros de aplicaciones y servicios → Microsoft → Windows → CodeIntegrity → Operational**, para identificar la política responsable. En una computadora administrada por una institución, solicite la autorización correspondiente. No es necesario desactivar el antivirus, el firewall ni la integridad de memoria para seguir estos pasos.
+
 ## Recompilar despues de modificar el codigo
 
 Ejecute `compilar.bat`. Detecta GCC, Clang o Zig disponibles en PATH. Para
