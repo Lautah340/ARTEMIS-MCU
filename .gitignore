@@ -1,0 +1,11 @@
+# Archivos intermedios y reportes generados al ejecutar.
+*.o
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+artemis_nuevo.exe
+reporte_artemis.txt
+.zig-cache/
+zig-out/
