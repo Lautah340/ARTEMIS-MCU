@@ -60,8 +60,7 @@ altitud final. La perpendicularidad exacta a la velocidad instantanea necesita
 especificar la direccion del empuje e integrar las ecuaciones dinamicas.
 
 ## Registro del desarrollo
+1.-Utilizamos Gpt(6.1 Sol) y Gemini(3.1 Pro= como apoyo para generar la primera versión del código, organizar los cinco archivos, implementar validaciones y preparar pruebas y documentación. Mas que nada para guiarnos en la utilizacion de  funciones, estructuras, arreglos y punteros. La solución se verificó mediante compilación y pruebas de cálculos, entradas incorrectas, historial y reportes. Cada integrante debe estudiar y comprender el código para explicar sus fórmulas, funciones y decisiones de programación. Queda modificar (Estetica , errores de repeticion , limpieza de menu , etc)
 
-Codigo e instrucciones generados con Codex a pedido del usuario para resolver
-la Situacion 2, usando cinco archivos, validacion estricta, structs, arreglos,
-punteros, menu y reportes. Se revisaron las formulas y la compilacion; las pruebas de ejecucion indicadas arriba pasaron correctamente.
+
 
