@@ -43,7 +43,17 @@ static void guardar_ensayo(Simulador *s, const Ensayo *ensayo)
 void inicializar_simulador(Simulador *s)
 {
     Ensayo nominal = { { ALTITUD_LEO, MASA_ORION,
-                         ACELERACION_LATERAL, DURACION_PULSO }, {0} };
+                         ACELERACION_LATERAL, DURACION_PULSO }, {
+                                                                .radio = 0,
+                                                                .velocidad = 0,
+                                                                .periodo = 0,
+                                                                .aceleracion = 0,
+                                                                .fuerza_gravitatoria = 0,
+                                                                .fuerza_centripeta = 0,
+                                                                .desviacion = 0,
+                                                                .delta_v = 0,
+                                                                .avance_local = 0
+                                                                } };
     if (!s) return;
     s->cantidad = 0;
     if (calcular_resultados(&nominal.parametros, &nominal.resultados))
